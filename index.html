@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desk Job Back Pain | The Spine-Sedentary Connection Explained</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2a6e96;
+            --primary-light: rgba(42, 110, 150, 0.08);
+            --secondary: #4a8c5c;
+            --secondary-light: rgba(74, 140, 92, 0.08);
+            --accent: #d35400;
+            --accent-light: rgba(211, 84, 0, 0.08);
+            --dark: #1a1a1a;
+            --gray: #555;
+            --gray-light: #f8f9fa;
+            --light: #ffffff;
+            --border: #e0e0e0;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.1);
+            --radius: 10px;
+            --transition: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.7;
+            color: var(--dark);
+            background-color: var(--light);
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .container {
+            width: 100%;
+        }
+
+        /* Header */
+        .header {
+            text-align: center;
+            padding: 50px 0 30px;
+            margin-bottom: 40px;
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary-light) 100%);
+            border-radius: var(--radius);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+        }
+
+        h1 {
+            font-size: 2.8rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            color: var(--gray);
+            max-width: 800px;
+            margin: 0 auto 20px;
+            font-weight: 500;
+        }
+
+        /* Stats Banner */
+        .stats-banner {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+
+        .stat-card {
+            background-color: var(--light);
+            padding: 25px;
+            border-radius: var(--radius);
+            text-align: center;
+            border: 1px solid var(--border);
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+            border-color: var(--primary);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+
+        .stat-label {
+            color: var(--gray);
+            font-weight: 500;
+            font-size: 1rem;
+        }
+
+        /* Problem Section */
+        .problem-section {
+            margin: 50px 0;
+        }
+
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .problem-card {
+            padding: 30px;
+            border-radius: var(--radius);
+            border: 1px solid var(--border);
+            background-color: var(--light);
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .problem-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background-color: var(--accent);
+            transition: var(--transition);
+        }
+
+        .problem-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .problem-card:hover::before {
+            width: 8px;
+        }
+
+        .problem-icon {
+            font-size: 2.2rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            color: var(--dark);
+            margin: 40px 0 25px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--border);
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 80px;
+            height: 2px;
+            background-color: var(--primary);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--dark);
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        p {
+            margin-bottom: 20px;
+            color: var(--gray);
+            font-size: 1.1rem;
+        }
+
+        /* Fixes Section */
+        .fixes-section {
+            background-color: var(--gray-light);
+            padding: 40px;
+            border-radius: var(--radius);
+            margin: 50px 0;
+        }
+
+        .fixes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+
+        .fix-card {
+            padding: 30px;
+            border-radius: var(--radius);
+            background-color: var(--light);
+            border: 2px solid var(--secondary);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .fix-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .fix-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background-color: var(--secondary-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+        }
+
+        .fix-title {
+            font-size: 1.6rem;
+            color: var(--dark);
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .fix-list {
+            text-align: left;
+            list-style-position: inside;
+            color: var(--gray);
+            margin: 20px 0;
+        }
+
+        .fix-list li {
+            margin-bottom: 12px;
+            padding-left: 10px;
+            position: relative;
+        }
+
+        .fix-list li::before {
+            content: '✓';
+            color: var(--secondary);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* Posture Guide */
+        .posture-guide {
+            margin: 50px 0;
+        }
+
+        .posture-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .posture-card {
+            padding: 25px;
+            border-radius: var(--radius);
+            background-color: var(--light);
+            border: 1px solid var(--border);
+            transition: var(--transition);
+            text-align: center;
+        }
+
+        .posture-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: var(--shadow);
+        }
+
+        .posture-icon {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .posture-title {
+            font-size: 1.3rem;
+            color: var(--dark);
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        /* Action Banner */
+        .action-banner {
+            background-color: var(--accent-light);
+            border-left: 5px solid var(--accent);
+            padding: 30px;
+            margin: 50px 0;
+            border-radius: 0 var(--radius) var(--radius) 0;
+        }
+
+        .action-banner h3 {
+            color: var(--accent);
+            margin-bottom: 15px;
+        }
+
+        /* Resources */
+        .resources {
+            background: linear-gradient(135deg, var(--primary-light) 0%, var(--secondary-light) 100%);
+            padding: 50px;
+            border-radius: var(--radius);
+            margin: 60px 0;
+            text-align: center;
+        }
+
+        .resource-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .resource-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 18px 35px;
+            background-color: white;
+            color: var(--dark);
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            box-shadow: var(--shadow);
+        }
+
+        .resource-link:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-hover);
+        }
+
+        .resource-link.clinic {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .resource-link.clinic:hover {
+            background-color: white;
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .resource-link.google {
+            background-color: var(--dark);
+            color: white;
+        }
+
+        .resource-link.google:hover {
+            background-color: white;
+            color: var(--dark);
+            border-color: var(--dark);
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            padding: 40px 0 20px;
+            color: var(--gray);
+            border-top: 1px solid var(--border);
+            margin-top: 50px;
+            font-size: 0.9rem;
+        }
+
+        /* Animation */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            body {
+                padding: 15px;
+            }
+
+            h1 {
+                font-size: 2.2rem;
+            }
+
+            .subtitle {
+                font-size: 1.1rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            .stats-banner {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .problem-grid, .fixes-grid, .posture-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .fixes-section {
+                padding: 25px;
+            }
+
+            .resources {
+                padding: 30px;
+            }
+
+            .resource-links {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .resource-link {
+                width: 100%;
+                max-width: 300px;
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.9rem;
+            }
+
+            .stats-banner {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-number {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="header fade-in">
+            <h1>The Spine-Sedentary Connection</h1>
+            <p class="subtitle">Why Your Desk Job is Causing Your Back Pain & 3 Simple Fixes You Can Start Today</p>
+        </header>
+
+        <div class="stats-banner fade-in">
+            <div class="stat-card">
+                <div class="stat-number">8+</div>
+                <div class="stat-label">Hours Daily Sitting<br>Average Office Worker</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">83%</div>
+                <div class="stat-label">Office Workers<br>Report Back Pain</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">40%</div>
+                <div class="stat-label">Increased Disc Pressure<br>When Sitting vs Standing</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">2x</div>
+                <div class="stat-label">Higher Risk of Chronic Pain<br>With Poor Posture</div>
+            </div>
+        </div>
+
+        <section class="fade-in" style="animation-delay: 0.1s;">
+            <p>If you spend your days working at a desk in Wisconsin, you've likely experienced that nagging lower back ache, stiff shoulders, or persistent neck tension. This isn't just discomfort—it's your body signaling that prolonged sitting is compromising your spinal health. Understanding the biomechanics behind desk-related back pain is the first step toward finding real, lasting relief.</p>
+        </section>
+
+        <section class="problem-section fade-in" style="animation-delay: 0.2s;">
+            <h2>How Prolonged Sitting Wrecks Your Spine</h2>
+            <p>Sitting isn't a neutral position for your body—it's an active stressor on your musculoskeletal system. Here's what's happening during those long hours at your desk:</p>
+
+            <div class="problem-grid">
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <i class="fas fa-compress-arrows-alt"></i>
+                    </div>
+                    <h3>Disc Compression</h3>
+                    <p>Sitting increases pressure on your lumbar discs by 40% compared to standing. Over hours, this constant compression reduces disc hydration, decreasing their ability to absorb shock and increasing injury risk.</p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <i class="fas fa-muscle"></i>
+                    </div>
+                    <h3>Core Stabilizer Weakness</h3>
+                    <p>Your deep core muscles—the transverse abdominis and multifidus—are designed to stabilize your spine. When sitting, these muscles essentially "switch off," leading to weakness and poor spinal support.</p>
+                </div>
+
+                <div class="problem-card">
+                    <div class="problem-icon">
+                        <i class="fas fa-arrows-alt-h"></i>
+                    </div>
+                    <h3>Muscle Imbalances</h3>
+                    <p>Hip flexors and hamstrings shorten and tighten, while glutes and abdominal muscles lengthen and weaken. This imbalance pulls your pelvis out of alignment, creating excessive curve in your lower back.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="fixes-section fade-in" style="animation-delay: 0.3s;">
+            <h2 style="text-align: center; border-bottom: none;">3 Simple Fixes You Can Start Today</h2>
+            <p style="text-align: center; margin-bottom: 30px;">These evidence-based strategies counteract the effects of sitting and can be implemented immediately—right at your desk.</p>
+
+            <div class="fixes-grid">
+                <div class="fix-card">
+                    <div class="fix-number">1</div>
+                    <h3 class="fix-title">The Micro-Break Method</h3>
+                    <p>Instead of waiting for major discomfort, integrate 30-second micro-breaks every 30 minutes.</p>
+                    <ul class="fix-list">
+                        <li>Stand up and take 3 deep breaths</li>
+                        <li>Perform 5 gentle torso twists</li>
+                        <li>Roll shoulders forward/backward 5 times</li>
+                        <li>Set phone reminders to maintain consistency</li>
+                    </ul>
+                    <p><strong>Result:</strong> Reduces disc pressure by 25% and maintains muscle engagement.</p>
+                </div>
+
+                <div class="fix-card">
+                    <div class="fix-number">2</div>
+                    <h3 class="fix-title">The 90-90-90 Posture Reset</h3>
+                    <p>Proper alignment redistributes weight and reduces strain on specific spinal structures.</p>
+                    <ul class="fix-list">
+                        <li>Hips at 90° (feet flat on floor)</li>
+                        <li>Knees at 90° (not crossing legs)</li>
+                        <li>Elbows at 90° (keyboard at elbow height)</li>
+                        <li>Screen top at eye level</li>
+                    </ul>
+                    <p><strong>Result:</strong> Decreases neck and shoulder tension by up to 50%.</p>
+                </div>
+
+                <div class="fix-card">
+                    <div class="fix-number">3</div>
+                    <h3 class="fix-title">The At-Desk Mobility Sequence</h3>
+                    <p>Three simple stretches that target the most affected areas from prolonged sitting.</p>
+                    <ul class="fix-list">
+                        <li><strong>Seated Cat-Cow:</strong> 10 reps to mobilize spine</li>
+                        <li><strong>Chair Twist:</strong> 30 seconds each side for rotation</li>
+                        <li><strong>Thoracic Extension:</strong> 10 reps over chair back</li>
+                        <li><strong>Hip Flexor Stretch:</strong> 30 seconds each side</li>
+                    </ul>
+                    <p><strong>Result:</strong> Improves flexibility and reduces stiffness within one week.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="posture-guide fade-in" style="animation-delay: 0.4s;">
+            <h2>Your Desk Setup Checklist</h2>
+            <p>Optimize your workspace to support your spine, not stress it:</p>
+
+            <div class="posture-grid">
+                <div class="posture-card">
+                    <div class="posture-icon">
+                        <i class="fas fa-chair"></i>
+                    </div>
+                    <h3 class="posture-title">Chair Position</h3>
+                    <p>Feet flat on floor, knees slightly lower than hips, lumbar support contacting lower back.</p>
+                </div>
+
+                <div class="posture-card">
+                    <div class="posture-icon">
+                        <i class="fas fa-desktop"></i>
+                    </div>
+                    <h3 class="posture-title">Monitor Height</h3>
+                    <p>Top of screen at eye level, 20-30 inches from eyes to reduce neck strain.</p>
+                </div>
+
+                <div class="posture-card">
+                    <div class="posture-icon">
+                        <i class="fas fa-keyboard"></i>
+                    </div>
+                    <h3 class="posture-title">Keyboard/Mouse</h3>
+                    <p>Elbows at 90°, wrists straight, mouse close to keyboard to minimize reaching.</p>
+                </div>
+
+                <div class="posture-card">
+                    <div class="posture-icon">
+                        <i class="fas fa-lightbulb"></i>
+                    </div>
+                    <h3 class="posture-title">Lighting & Movement</h3>
+                    <p>Adequate lighting to prevent leaning, standing for phone calls, printer placed away from desk.</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="action-banner fade-in" style="animation-delay: 0.5s;">
+            <h3>When DIY Isn't Enough: Recognizing Professional Help Signals</h3>
+            <p>While these fixes help prevent and reduce minor discomfort, certain symptoms indicate underlying issues needing professional attention:</p>
+            <ul style="color: var(--gray); margin: 15px 0 0 20px;">
+                <li style="margin-bottom: 10px;">Pain radiating down legs (sciatica symptoms)</li>
+                <li style="margin-bottom: 10px;">Numbness or tingling in extremities</li>
+                <li style="margin-bottom: 10px;">Pain that persists despite posture correction</li>
+                <li>Morning stiffness lasting more than 30 minutes</li>
+            </ul>
+        </div>
+
+        <div class="resources fade-in" style="animation-delay: 0.6s;">
+            <h3 style="color: var(--dark); margin-bottom: 20px;">Professional Support for Wisconsin Professionals</h3>
+            <p style="color: var(--gray); max-width: 800px; margin: 0 auto;">When desk-related pain affects your work and quality of life, specialized care can provide targeted relief and long-term solutions.</p>
+
+            <div class="resource-links">
+                <a href="https://www.rehablabwi.com/" class="resource-link clinic" target="_blank">
+                    <i class="fas fa-user-md"></i> Chiropractor Physical Therapy
+                </a>
+
+                <a href="https://maps.app.goo.gl/VkW2gyGkPxfVUUHY8" class="resource-link google" target="_blank">
+                    <i class="fas fa-star"></i> check reviews on google
+                </a>
+            </div>
+        </div>
+
+        <footer class="footer fade-in" style="animation-delay: 0.7s;">
+            <p>© 2023 Spine Health Guide for Wisconsin Professionals. Consistency with simple daily habits is more effective than occasional intensive efforts.</p>
+            <p style="margin-top: 15px;">This information is for educational purposes. Consult healthcare professionals for persistent or severe back pain.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Animation trigger
+        document.addEventListener('DOMContentLoaded', function() {
+            const fadeElements = document.querySelectorAll('.fade-in');
+
+            // Trigger animations with staggered delays
+            fadeElements.forEach((el, index) => {
+                setTimeout(() => {
+                    el.style.opacity = '1';
+                    el.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+
+            // Add interaction to stat cards
+            const statCards = document.querySelectorAll('.stat-card');
+            statCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-8px)';
+                });
+
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(-5px)';
+                });
+            });
+
+            // Add interaction to fix cards
+            const fixCards = document.querySelectorAll('.fix-card');
+            fixCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-12px)';
+                });
+
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(-10px)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>
